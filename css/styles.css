@@ -1,5 +1,10 @@
 @import url("./reset.css");
 
+/* Apply box-sizing globally */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -11,12 +16,11 @@ body {
 }
 
 header {
-    background-color: rgb(175, 80, 151);
+    background-color: rgb(212, 78, 179);
     text-align: center;
     padding: 20px;
     width: 100%;
     max-width: 800px; 
-    box-sizing: border-box;
     color: white;
     border-radius: 10px; 
 }
@@ -24,13 +28,12 @@ header {
 main {
     display: flex;
     flex-direction: column; 
-    background-color: rgb(123, 224, 123);
+    background-color: rgb(124, 255, 124);
     flex: 1;
     padding: 20px;
     gap: 20px; 
     width: 100%;
     max-width: 800px; 
-    box-sizing: border-box;
     margin-top: 10px; 
     border-radius: 10px; 
 }
@@ -39,7 +42,6 @@ article {
     background-color: rgb(255, 80, 80);
     flex: 1 1 auto; 
     padding: 20px;
-    box-sizing: border-box;
     color: white;
     text-align: center;
     border-radius: 10px; 
@@ -50,7 +52,6 @@ aside {
     padding: 20px;
     width: 100%;
     max-width: 800px; 
-    box-sizing: border-box;
     color: white;
     text-align: center;
     margin-top: 10px; 
@@ -64,8 +65,27 @@ footer {
     padding: 20px;
     width: 100%;
     max-width: 800px; 
-    box-sizing: border-box;
     margin-top: 10px; 
     color: white;
     border-radius: 10px; 
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 600px) {
+    main {
+        flex-direction: column; /* Stack articles vertically */
+        gap: 10px; /* Reduce gap for smaller screens */
+    }
+
+    article {
+        flex: 1 1 100%; /* Make articles take full width */
+    }
+
+    aside {
+        margin-top: 10px; /* Maintain spacing above aside */
+    }
+
+    footer {
+        margin-top: 10px; /* Maintain spacing above footer */
+    }
 }
